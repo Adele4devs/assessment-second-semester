@@ -31,8 +31,8 @@ export function sumOfNumbersTo(destination) {
 export function evenNumbersWithin(destination) {
     console.log(destination)
     // get the number from 0 to destination
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfEvenNumbers = []
 
     // write your code here
@@ -40,15 +40,14 @@ export function evenNumbersWithin(destination) {
         if (counter % 2 === 0) {
             arrayOfEvenNumbers.push(counter)
             count++ //increaqse count per loop by 1//
-            sum = sum + counter
+            sum += counter
         }
     }
     return {
         count,
         sum,
         arrayOfEvenNumbers,
-    }
-    
+    }  
 }
 
 /**
@@ -90,8 +89,8 @@ export function celsiusToFahrenheit(arrayOfNumbers) {
 export function oddNumbersWithin(destination) {
     console.log(destination)
     // get the number from 0 to destination
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfOddNumbers = []
 
     // write your code here
@@ -99,7 +98,7 @@ export function oddNumbersWithin(destination) {
         if (counter % 2 !== 0) {
             arrayOfOddNumbers.push(counter)
             count++
-            sum = sum + counter
+            sum += counter
         }
     }
     return {
@@ -121,8 +120,8 @@ export function oddNumbersWithin(destination) {
  */
 export function findMultiples(arrayOfNumbers, factor) {
     console.log(arrayOfNumbers, factor)
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfMultiples = []
 
     // write your code here
@@ -188,8 +187,8 @@ export function calculateFactorials(arrayOfNumbers) {
  */
 export function findPrimeNumbers(arrayOfNumbers) {
     console.log(arrayOfNumbers)
-    const sum = 0
-    const count = 0
+    let sum = 0
+    let count = 0
     const arrayOfPrimes = []
 
     // write your code here
