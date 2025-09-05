@@ -14,8 +14,10 @@
  */
 export function sumOfNumbersTo(destination) {
     console.log(destination)
+
     // write your code here
-    return 0
+
+    return destination * (destination + 1) / 2;
 }
 
 /**
@@ -34,12 +36,19 @@ export function evenNumbersWithin(destination) {
     const arrayOfEvenNumbers = []
 
     // write your code here
-
+    for (let counter = 0; counter <= destination; counter++) {
+        if (counter % 2 === 0) {
+            arrayOfEvenNumbers.push(counter)
+            count++ //increaqse count per loop by 1//
+            sum = sum + counter
+        }
+    }
     return {
         count,
         sum,
         arrayOfEvenNumbers,
     }
+    
 }
 
 /**
@@ -60,7 +69,12 @@ export function celsiusToFahrenheit(arrayOfNumbers) {
     const result = []
 
     // write your code here
-
+    // °F = (°C × 9/5) + 32 //
+    for ( let counter = 0; counter < arrayOfNumbers.length; counter++) {
+       const arrayInCelsius = arrayOfNumbers[counter];
+       const arrayInFahrenheit = Math.trunc((arrayInCelsius * 9) / 5 + 32); //pemdas method. is this mathematically correct? i wonder//
+       result.push(arrayInFahrenheit);
+    }
     return result
 }
 
@@ -81,7 +95,13 @@ export function oddNumbersWithin(destination) {
     const arrayOfOddNumbers = []
 
     // write your code here
-
+    for ( let counter = 0; counter <= destination; counter++) {
+        if (counter % 2 !== 0) {
+            arrayOfOddNumbers.push(counter)
+            count++
+            sum = sum + counter
+        }
+    }
     return {
         count,
         sum,
@@ -106,7 +126,14 @@ export function findMultiples(arrayOfNumbers, factor) {
     const arrayOfMultiples = []
 
     // write your code here
-
+    // % factor === 0 //
+    for ( let counter = 0; counter < arrayOfNumbers.length; counter++) {
+        if (arrayOfNumbers[counter] % factor === 0) {
+            arrayOfMultiples.push(arrayOfNumbers[counter])
+            sum += arrayOfNumbers[counter]
+            count++
+        }
+    }
     return {
         count,
         sum,
@@ -130,6 +157,21 @@ export function calculateFactorials(arrayOfNumbers) {
     const result = []
 
     // write your code here
+    for (let counter = 0; counter < arrayOfNumbers.length; counter++) {
+        let figure = arrayOfNumbers[counter]
+        
+        if (figure < 0) {
+            result.push(0) //less than zero which includes negative integers//
+        } else if (figure === 0) {
+            result.push(1) //0! = 1//
+        } else {
+            let factorial = 1
+            for (let x = 1; x <= figure; x++) {
+                factorial = factorial * x
+            }
+            result.push(factorial)
+        }
+    }
 
     return result
 }
@@ -151,6 +193,15 @@ export function findPrimeNumbers(arrayOfNumbers) {
     const arrayOfPrimes = []
 
     // write your code here
+    arrayOfPrimes = arrayOfNumbers.filter(number => {
+        if (number <= 1) return false
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) return false
+        }
+        return true
+    })
+    sum = arrayOfPrimes.reduce((acc, number) => acc + number, 0)
+    count = arrayOfPrimes.length
 
     return {
         count,
@@ -172,6 +223,9 @@ export function doubleTheValues(arrayOfNumbers) {
     const result = []
 
     // write your code here
+    for (let counter = 0; counter < arrayOfNumbers.length; counter++) {
+        result.push(arrayOfNumbers[counter] * 2)
+    }
 
     return result
 }
